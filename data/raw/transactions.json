@@ -1,0 +1,802 @@
+[
+  {
+    "customer_id": "C031",
+    "transaction_id": "T0151",
+    "transaction_date": "2024-08-09",
+    "revenue": 79.94,
+    "country": "US",
+    "acquisition_channel": "Organic"
+  },
+  {
+    "customer_id": "C068",
+    "transaction_id": "T0152",
+    "transaction_date": "2024-08-23",
+    "revenue": 98.8,
+    "country": "CA",
+    "acquisition_channel": "Social"
+  },
+  {
+    "customer_id": "C025",
+    "transaction_id": "T0153",
+    "transaction_date": "2024-09-06",
+    "revenue": 119.26,
+    "country": "GB",
+    "acquisition_channel": "Paid Search"
+  },
+  {
+    "customer_id": "C062",
+    "transaction_id": "T0154",
+    "transaction_date": "2024-09-20",
+    "revenue": 143.21,
+    "country": "DE",
+    "acquisition_channel": "Email"
+  },
+  {
+    "customer_id": "C019",
+    "transaction_id": "T0155",
+    "transaction_date": "2024-09-13",
+    "revenue": 161.45,
+    "country": "AU",
+    "acquisition_channel": "Referral"
+  },
+  {
+    "customer_id": "C056",
+    "transaction_id": "T0156",
+    "transaction_date": "2024-09-27",
+    "revenue": 185.7,
+    "country": "US",
+    "acquisition_channel": "Organic"
+  },
+  {
+    "customer_id": "C013",
+    "transaction_id": "T0157",
+    "transaction_date": "2024-10-11",
+    "revenue": 40.06,
+    "country": "CA",
+    "acquisition_channel": "Social"
+  },
+  {
+    "customer_id": "C050",
+    "transaction_id": "T0158",
+    "transaction_date": "2024-10-25",
+    "revenue": 66.06,
+    "country": "GB",
+    "acquisition_channel": "Paid Search"
+  },
+  {
+    "customer_id": "C007",
+    "transaction_id": "T0159",
+    "transaction_date": "2024-11-08",
+    "revenue": 84.76,
+    "country": "DE",
+    "acquisition_channel": "Email"
+  },
+  {
+    "customer_id": "C044",
+    "transaction_id": "T0160",
+    "transaction_date": "2024-11-22",
+    "revenue": 107.64,
+    "country": "AU",
+    "acquisition_channel": "Referral"
+  },
+  {
+    "customer_id": "C001",
+    "transaction_id": "T0161",
+    "transaction_date": "2024-12-06",
+    "revenue": 128.85,
+    "country": "US",
+    "acquisition_channel": "Organic"
+  },
+  {
+    "customer_id": "C038",
+    "transaction_id": "T0162",
+    "transaction_date": "2024-11-29",
+    "revenue": 158.57,
+    "country": "CA",
+    "acquisition_channel": "Social"
+  },
+  {
+    "customer_id": "C075",
+    "transaction_id": "T0163",
+    "transaction_date": "2024-12-13",
+    "revenue": 176.75,
+    "country": "GB",
+    "acquisition_channel": "Paid Search"
+  },
+  {
+    "customer_id": "C032",
+    "transaction_id": "T0164",
+    "transaction_date": "2024-12-27",
+    "revenue": 37.87,
+    "country": "DE",
+    "acquisition_channel": "Email"
+  },
+  {
+    "customer_id": "C069",
+    "transaction_id": "T0165",
+    "transaction_date": "2024-01-16",
+    "revenue": 60.32,
+    "country": "AU",
+    "acquisition_channel": "Referral"
+  },
+  {
+    "customer_id": "C026",
+    "transaction_id": "T0166",
+    "transaction_date": "2024-01-30",
+    "revenue": 73.85,
+    "country": "US",
+    "acquisition_channel": "Organic"
+  },
+  {
+    "customer_id": "C063",
+    "transaction_id": "T0167",
+    "transaction_date": "2024-02-13",
+    "revenue": 98.86,
+    "country": "CA",
+    "acquisition_channel": "Social"
+  },
+  {
+    "customer_id": "C020",
+    "transaction_id": "T0168",
+    "transaction_date": "2024-02-27",
+    "revenue": 127.03,
+    "country": "GB",
+    "acquisition_channel": "Paid Search"
+  },
+  {
+    "customer_id": "C057",
+    "transaction_id": "T0169",
+    "transaction_date": "2024-02-20",
+    "revenue": 144.57,
+    "country": "DE",
+    "acquisition_channel": "Email"
+  },
+  {
+    "customer_id": "C014",
+    "transaction_id": "T0170",
+    "transaction_date": "2024-03-05",
+    "revenue": 166.59,
+    "country": "AU",
+    "acquisition_channel": "Referral"
+  },
+  {
+    "customer_id": "C051",
+    "transaction_id": "T0171",
+    "transaction_date": "2024-03-19",
+    "revenue": 29.23,
+    "country": "US",
+    "acquisition_channel": "Organic"
+  },
+  {
+    "customer_id": "C008",
+    "transaction_id": "T0172",
+    "transaction_date": "2024-04-02",
+    "revenue": 47.85,
+    "country": "CA",
+    "acquisition_channel": "Social"
+  },
+  {
+    "customer_id": "C045",
+    "transaction_id": "T0173",
+    "transaction_date": "2024-04-16",
+    "revenue": 69.67,
+    "country": "GB",
+    "acquisition_channel": "Paid Search"
+  },
+  {
+    "customer_id": "C002",
+    "transaction_id": "T0174",
+    "transaction_date": "2024-04-30",
+    "revenue": 96.42,
+    "country": "DE",
+    "acquisition_channel": "Email"
+  },
+  {
+    "customer_id": "C039",
+    "transaction_id": "T0175",
+    "transaction_date": "2024-05-14",
+    "revenue": 119.69,
+    "country": "AU",
+    "acquisition_channel": "Referral"
+  },
+  {
+    "customer_id": "C076",
+    "transaction_id": "T0176",
+    "transaction_date": "2024-05-07",
+    "revenue": 135.28,
+    "country": "US",
+    "acquisition_channel": "Organic"
+  },
+  {
+    "customer_id": "C033",
+    "transaction_id": "T0177",
+    "transaction_date": "2024-05-21",
+    "revenue": 157.16,
+    "country": "CA",
+    "acquisition_channel": "Social"
+  },
+  {
+    "customer_id": "C070",
+    "transaction_id": "T0178",
+    "transaction_date": "2024-06-04",
+    "revenue": 184.17,
+    "country": "GB",
+    "acquisition_channel": "Paid Search"
+  },
+  {
+    "customer_id": "C027",
+    "transaction_id": "T0179",
+    "transaction_date": "2024-06-18",
+    "revenue": 37.08,
+    "country": "DE",
+    "acquisition_channel": "Email"
+  },
+  {
+    "customer_id": "C064",
+    "transaction_id": "T0180",
+    "transaction_date": "2024-07-02",
+    "revenue": 60.6,
+    "country": "AU",
+    "acquisition_channel": "Referral"
+  },
+  {
+    "customer_id": "C021",
+    "transaction_id": "T0181",
+    "transaction_date": "2024-07-16",
+    "revenue": 86.75,
+    "country": "US",
+    "acquisition_channel": "Organic"
+  },
+  {
+    "customer_id": "C058",
+    "transaction_id": "T0182",
+    "transaction_date": "2024-07-30",
+    "revenue": 109.08,
+    "country": "CA",
+    "acquisition_channel": "Social"
+  },
+  {
+    "customer_id": "C015",
+    "transaction_id": "T0183",
+    "transaction_date": "2024-07-23",
+    "revenue": 135.81,
+    "country": "GB",
+    "acquisition_channel": "Paid Search"
+  },
+  {
+    "customer_id": "C052",
+    "transaction_id": "T0184",
+    "transaction_date": "2024-08-06",
+    "revenue": 148.18,
+    "country": "DE",
+    "acquisition_channel": "Email"
+  },
+  {
+    "customer_id": "C009",
+    "transaction_id": "T0185",
+    "transaction_date": "2024-08-20",
+    "revenue": 174.83,
+    "country": "AU",
+    "acquisition_channel": "Referral"
+  },
+  {
+    "customer_id": "C046",
+    "transaction_id": "T0186",
+    "transaction_date": "2024-09-03",
+    "revenue": 27.07,
+    "country": "US",
+    "acquisition_channel": "Organic"
+  },
+  {
+    "customer_id": "C003",
+    "transaction_id": "T0187",
+    "transaction_date": "2024-09-17",
+    "revenue": 56.34,
+    "country": "CA",
+    "acquisition_channel": "Social"
+  },
+  {
+    "customer_id": "C040",
+    "transaction_id": "T0188",
+    "transaction_date": "2024-10-01",
+    "revenue": 71.98,
+    "country": "GB",
+    "acquisition_channel": "Paid Search"
+  },
+  {
+    "customer_id": "C077",
+    "transaction_id": "T0189",
+    "transaction_date": "2024-10-15",
+    "revenue": 94.28,
+    "country": "DE",
+    "acquisition_channel": "Email"
+  },
+  {
+    "customer_id": "C034",
+    "transaction_id": "T0190",
+    "transaction_date": "2024-10-08",
+    "revenue": 120.38,
+    "country": "AU",
+    "acquisition_channel": "Referral"
+  },
+  {
+    "customer_id": "C071",
+    "transaction_id": "T0191",
+    "transaction_date": "2024-10-22",
+    "revenue": 143.06,
+    "country": "US",
+    "acquisition_channel": "Organic"
+  },
+  {
+    "customer_id": "C028",
+    "transaction_id": "T0192",
+    "transaction_date": "2024-11-05",
+    "revenue": 164.34,
+    "country": "CA",
+    "acquisition_channel": "Social"
+  },
+  {
+    "customer_id": "C065",
+    "transaction_id": "T0193",
+    "transaction_date": "2024-11-19",
+    "revenue": 187.0,
+    "country": "GB",
+    "acquisition_channel": "Paid Search"
+  },
+  {
+    "customer_id": "C022",
+    "transaction_id": "T0194",
+    "transaction_date": "2024-12-03",
+    "revenue": 48.08,
+    "country": "DE",
+    "acquisition_channel": "Email"
+  },
+  {
+    "customer_id": "C059",
+    "transaction_id": "T0195",
+    "transaction_date": "2024-12-17",
+    "revenue": 65.32,
+    "country": "AU",
+    "acquisition_channel": "Referral"
+  },
+  {
+    "customer_id": "C016",
+    "transaction_id": "T0196",
+    "transaction_date": "2024-01-06",
+    "revenue": 93.34,
+    "country": "US",
+    "acquisition_channel": "Organic"
+  },
+  {
+    "customer_id": "C053",
+    "transaction_id": "T0197",
+    "transaction_date": "2024-12-24",
+    "revenue": 112.6,
+    "country": "CA",
+    "acquisition_channel": "Social"
+  },
+  {
+    "customer_id": "C010",
+    "transaction_id": "T0198",
+    "transaction_date": "2024-01-13",
+    "revenue": 129.61,
+    "country": "GB",
+    "acquisition_channel": "Paid Search"
+  },
+  {
+    "customer_id": "C047",
+    "transaction_id": "T0199",
+    "transaction_date": "2024-01-27",
+    "revenue": 163.99,
+    "country": "DE",
+    "acquisition_channel": "Email"
+  },
+  {
+    "customer_id": "C004",
+    "transaction_id": "T0200",
+    "transaction_date": "2024-02-10",
+    "revenue": 185.03,
+    "country": "AU",
+    "acquisition_channel": "Referral"
+  },
+  {
+    "customer_id": "C041",
+    "transaction_id": "T0201",
+    "transaction_date": "2024-02-24",
+    "revenue": 39.63,
+    "country": "US",
+    "acquisition_channel": "Organic"
+  },
+  {
+    "customer_id": "C078",
+    "transaction_id": "T0202",
+    "transaction_date": "2024-03-09",
+    "revenue": 62.12,
+    "country": "CA",
+    "acquisition_channel": "Social"
+  },
+  {
+    "customer_id": "C035",
+    "transaction_id": "T0203",
+    "transaction_date": "2024-03-23",
+    "revenue": 84.18,
+    "country": "GB",
+    "acquisition_channel": "Paid Search"
+  },
+  {
+    "customer_id": "C072",
+    "transaction_id": "T0204",
+    "transaction_date": "2024-03-16",
+    "revenue": 99.0,
+    "country": "DE",
+    "acquisition_channel": "Email"
+  },
+  {
+    "customer_id": "C029",
+    "transaction_id": "T0205",
+    "transaction_date": "2024-03-30",
+    "revenue": 125.83,
+    "country": "AU",
+    "acquisition_channel": "Referral"
+  },
+  {
+    "customer_id": "C066",
+    "transaction_id": "T0206",
+    "transaction_date": "2024-04-13",
+    "revenue": 145.56,
+    "country": "US",
+    "acquisition_channel": "Organic"
+  },
+  {
+    "customer_id": "C023",
+    "transaction_id": "T0207",
+    "transaction_date": "2024-04-27",
+    "revenue": 170.81,
+    "country": "CA",
+    "acquisition_channel": "Social"
+  },
+  {
+    "customer_id": "C060",
+    "transaction_id": "T0208",
+    "transaction_date": "2024-05-11",
+    "revenue": 19.7,
+    "country": "GB",
+    "acquisition_channel": "Paid Search"
+  },
+  {
+    "customer_id": "C017",
+    "transaction_id": "T0209",
+    "transaction_date": "2024-05-25",
+    "revenue": 46.55,
+    "country": "DE",
+    "acquisition_channel": "Email"
+  },
+  {
+    "customer_id": "C054",
+    "transaction_id": "T0210",
+    "transaction_date": "2024-06-08",
+    "revenue": 76.82,
+    "country": "AU",
+    "acquisition_channel": "Referral"
+  },
+  {
+    "customer_id": "C011",
+    "transaction_id": "T0211",
+    "transaction_date": "2024-06-01",
+    "revenue": 91.18,
+    "country": "US",
+    "acquisition_channel": "Organic"
+  },
+  {
+    "customer_id": "C048",
+    "transaction_id": "T0212",
+    "transaction_date": "2024-06-15",
+    "revenue": 120.41,
+    "country": "CA",
+    "acquisition_channel": "Social"
+  },
+  {
+    "customer_id": "C005",
+    "transaction_id": "T0213",
+    "transaction_date": "2024-06-29",
+    "revenue": 139.46,
+    "country": "GB",
+    "acquisition_channel": "Paid Search"
+  },
+  {
+    "customer_id": "C042",
+    "transaction_id": "T0214",
+    "transaction_date": "2024-07-13",
+    "revenue": 162.08,
+    "country": "DE",
+    "acquisition_channel": "Email"
+  },
+  {
+    "customer_id": "C079",
+    "transaction_id": "T0215",
+    "transaction_date": "2024-07-27",
+    "revenue": 191.49,
+    "country": "AU",
+    "acquisition_channel": "Referral"
+  },
+  {
+    "customer_id": "C036",
+    "transaction_id": "T0216",
+    "transaction_date": "2024-08-10",
+    "revenue": 44.95,
+    "country": "US",
+    "acquisition_channel": "Organic"
+  },
+  {
+    "customer_id": "C073",
+    "transaction_id": "T0217",
+    "transaction_date": "2024-08-24",
+    "revenue": 62.67,
+    "country": "CA",
+    "acquisition_channel": "Social"
+  },
+  {
+    "customer_id": "C030",
+    "transaction_id": "T0218",
+    "transaction_date": "2024-08-17",
+    "revenue": 87.62,
+    "country": "GB",
+    "acquisition_channel": "Paid Search"
+  },
+  {
+    "customer_id": "C067",
+    "transaction_id": "T0219",
+    "transaction_date": "2024-08-31",
+    "revenue": 103.86,
+    "country": "DE",
+    "acquisition_channel": "Email"
+  },
+  {
+    "customer_id": "C024",
+    "transaction_id": "T0220",
+    "transaction_date": "2024-09-14",
+    "revenue": 128.56,
+    "country": "AU",
+    "acquisition_channel": "Referral"
+  },
+  {
+    "customer_id": "C061",
+    "transaction_id": "T0221",
+    "transaction_date": "2024-09-28",
+    "revenue": 159.62,
+    "country": "US",
+    "acquisition_channel": "Organic"
+  },
+  {
+    "customer_id": "C018",
+    "transaction_id": "T0222",
+    "transaction_date": "2024-10-12",
+    "revenue": 177.95,
+    "country": "CA",
+    "acquisition_channel": "Social"
+  },
+  {
+    "customer_id": "C055",
+    "transaction_id": "T0223",
+    "transaction_date": "2024-10-26",
+    "revenue": 30.51,
+    "country": "GB",
+    "acquisition_channel": "Paid Search"
+  },
+  {
+    "customer_id": "C012",
+    "transaction_id": "T0224",
+    "transaction_date": "2024-11-09",
+    "revenue": 55.98,
+    "country": "DE",
+    "acquisition_channel": "Email"
+  },
+  {
+    "customer_id": "C049",
+    "transaction_id": "T0225",
+    "transaction_date": "2024-11-02",
+    "revenue": 70.69,
+    "country": "AU",
+    "acquisition_channel": "Referral"
+  },
+  {
+    "customer_id": "C006",
+    "transaction_id": "T0226",
+    "transaction_date": "2024-11-16",
+    "revenue": 100.01,
+    "country": "US",
+    "acquisition_channel": "Organic"
+  },
+  {
+    "customer_id": "C043",
+    "transaction_id": "T0227",
+    "transaction_date": "2024-11-30",
+    "revenue": 122.03,
+    "country": "CA",
+    "acquisition_channel": "Social"
+  },
+  {
+    "customer_id": "C080",
+    "transaction_id": "T0228",
+    "transaction_date": "2024-12-14",
+    "revenue": 149.23,
+    "country": "GB",
+    "acquisition_channel": "Paid Search"
+  },
+  {
+    "customer_id": "C037",
+    "transaction_id": "T0229",
+    "transaction_date": "2024-01-03",
+    "revenue": 163.89,
+    "country": "DE",
+    "acquisition_channel": "Email"
+  },
+  {
+    "customer_id": "C074",
+    "transaction_id": "T0230",
+    "transaction_date": "2024-01-17",
+    "revenue": 196.53,
+    "country": "AU",
+    "acquisition_channel": "Referral"
+  },
+  {
+    "customer_id": "C031",
+    "transaction_id": "T0231",
+    "transaction_date": "2024-01-31",
+    "revenue": 38.96,
+    "country": "US",
+    "acquisition_channel": "Organic"
+  },
+  {
+    "customer_id": "C068",
+    "transaction_id": "T0232",
+    "transaction_date": "2024-01-24",
+    "revenue": 63.23,
+    "country": "CA",
+    "acquisition_channel": "Social"
+  },
+  {
+    "customer_id": "C025",
+    "transaction_id": "T0233",
+    "transaction_date": "2024-02-07",
+    "revenue": 91.14,
+    "country": "GB",
+    "acquisition_channel": "Paid Search"
+  },
+  {
+    "customer_id": "C062",
+    "transaction_id": "T0234",
+    "transaction_date": "2024-02-21",
+    "revenue": 115.1,
+    "country": "DE",
+    "acquisition_channel": "Email"
+  },
+  {
+    "customer_id": "C019",
+    "transaction_id": "T0235",
+    "transaction_date": "2024-03-06",
+    "revenue": 132.82,
+    "country": "AU",
+    "acquisition_channel": "Referral"
+  },
+  {
+    "customer_id": "C056",
+    "transaction_id": "T0236",
+    "transaction_date": "2024-03-20",
+    "revenue": 154.44,
+    "country": "US",
+    "acquisition_channel": "Organic"
+  },
+  {
+    "customer_id": "C013",
+    "transaction_id": "T0237",
+    "transaction_date": "2024-04-03",
+    "revenue": 186.68,
+    "country": "CA",
+    "acquisition_channel": "Social"
+  },
+  {
+    "customer_id": "C050",
+    "transaction_id": "T0238",
+    "transaction_date": "2024-04-17",
+    "revenue": 31.95,
+    "country": "GB",
+    "acquisition_channel": "Paid Search"
+  },
+  {
+    "customer_id": "C007",
+    "transaction_id": "T0239",
+    "transaction_date": "2024-04-10",
+    "revenue": 59.13,
+    "country": "DE",
+    "acquisition_channel": "Email"
+  },
+  {
+    "customer_id": "C044",
+    "transaction_id": "T0240",
+    "transaction_date": "2024-04-24",
+    "revenue": 82.43,
+    "country": "AU",
+    "acquisition_channel": "Referral"
+  },
+  {
+    "customer_id": "C001",
+    "transaction_id": "T0241",
+    "transaction_date": "2024-05-08",
+    "revenue": 103.03,
+    "country": "US",
+    "acquisition_channel": "Organic"
+  },
+  {
+    "customer_id": "C038",
+    "transaction_id": "T0242",
+    "transaction_date": "2024-05-22",
+    "revenue": 128.0,
+    "country": "CA",
+    "acquisition_channel": "Social"
+  },
+  {
+    "customer_id": "C075",
+    "transaction_id": "T0243",
+    "transaction_date": "2024-06-05",
+    "revenue": 150.27,
+    "country": "GB",
+    "acquisition_channel": "Paid Search"
+  },
+  {
+    "customer_id": "C032",
+    "transaction_id": "T0244",
+    "transaction_date": "2024-06-19",
+    "revenue": 178.22,
+    "country": "DE",
+    "acquisition_channel": "Email"
+  },
+  {
+    "customer_id": "C069",
+    "transaction_id": "T0245",
+    "transaction_date": "2024-07-03",
+    "revenue": 22.45,
+    "country": "AU",
+    "acquisition_channel": "Referral"
+  },
+  {
+    "customer_id": "C026",
+    "transaction_id": "T0246",
+    "transaction_date": "2024-06-26",
+    "revenue": 51.59,
+    "country": "US",
+    "acquisition_channel": "Organic"
+  },
+  {
+    "customer_id": "C063",
+    "transaction_id": "T0247",
+    "transaction_date": "2024-07-10",
+    "revenue": 68.86,
+    "country": "CA",
+    "acquisition_channel": "Social"
+  },
+  {
+    "customer_id": "C020",
+    "transaction_id": "T0248",
+    "transaction_date": "2024-07-24",
+    "revenue": 93.75,
+    "country": "GB",
+    "acquisition_channel": "Paid Search"
+  },
+  {
+    "customer_id": "C045",
+    "transaction_id": "T0013",
+    "transaction_date": "2024-05-29",
+    "revenue": 124.32,
+    "country": "GB",
+    "acquisition_channel": "Paid Search"
+  },
+  {
+    "customer_id": "C999",
+    "transaction_id": "T9999",
+    "transaction_date": "not-a-date",
+    "revenue": 42,
+    "country": "US",
+    "acquisition_channel": "Organic"
+  }
+]

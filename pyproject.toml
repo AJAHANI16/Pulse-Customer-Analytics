@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "customer-analytics-dashboard"
+version = "1.0.0"
+description = "Reproducible customer analytics ETL pipeline and interactive Streamlit dashboard"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pandas>=2.1,<3.0",
+  "plotly>=5.18,<7.0",
+  "streamlit>=1.31,<2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+
+[project.scripts]
+analytics-etl = "analytics_dashboard.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
