@@ -1,14 +1,19 @@
 """Interactive customer analytics dashboard."""
 
-from pathlib import Path
 from datetime import timedelta
+from pathlib import Path
 
 import pandas as pd
 import plotly.express as px
 import streamlit as st
 
 from analytics_dashboard.etl import run_pipeline
-from analytics_dashboard.metrics import cohort_retention, customer_segments, monthly_revenue, rolling_churn
+from analytics_dashboard.metrics import (
+    cohort_retention,
+    customer_segments,
+    monthly_revenue,
+    rolling_churn,
+)
 
 st.set_page_config(page_title="Pulse Analytics", page_icon="📊", layout="wide")
 st.markdown("""<style>

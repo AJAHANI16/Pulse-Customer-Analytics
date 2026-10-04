@@ -1,7 +1,12 @@
 import pandas as pd
 import pytest
 
-from analytics_dashboard.metrics import cohort_retention, customer_segments, monthly_revenue, rolling_churn
+from analytics_dashboard.metrics import (
+    cohort_retention,
+    customer_segments,
+    monthly_revenue,
+    rolling_churn,
+)
 
 
 @pytest.fixture
