@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "customer-analytics-dashboard"
 version = "1.0.0"
-description = "Reproducible customer analytics ETL pipeline and interactive Streamlit dashboard"
+description = "Transaction validation and customer metrics with a Streamlit dashboard"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [

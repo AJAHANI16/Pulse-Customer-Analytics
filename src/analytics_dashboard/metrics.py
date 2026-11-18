@@ -20,7 +20,7 @@ def monthly_revenue(data: pd.DataFrame) -> pd.DataFrame:
 
 
 def customer_segments(data: pd.DataFrame, as_of: pd.Timestamp | None = None) -> pd.DataFrame:
-    """Create interpretable RFM segments from quartile scores."""
+    """Score recency, frequency, and revenue relative to the selected customers."""
     snapshot = as_of or (pd.Timestamp(data["transaction_date"].max()) + timedelta(days=1))
     rfm = data.groupby("customer_id").agg(
         last_purchase=("transaction_date", "max"),
@@ -33,8 +33,11 @@ def customer_segments(data: pd.DataFrame, as_of: pd.Timestamp | None = None) -> 
             rfm[column] = pd.Series(pd.NA, index=rfm.index, dtype="Int64")
         rfm["segment"] = "Insufficient data"
         return rfm.reset_index()
-    for source, target in (("recency_days", "r_score"), ("frequency", "f_score"),
-                           ("monetary", "m_score")):
+    for source, target in (
+        ("recency_days", "r_score"),
+        ("frequency", "f_score"),
+        ("monetary", "m_score"),
+    ):
         scores = rfm[source].rank(method="average", pct=True).mul(4).apply(ceil).clip(1, 4)
         rfm[target] = 5 - scores if source == "recency_days" else scores
     score = rfm[["r_score", "f_score", "m_score"]].sum(axis=1)
@@ -48,8 +51,12 @@ def cohort_retention(data: pd.DataFrame) -> pd.DataFrame:
     activity = data[["customer_id", "transaction_date"]].copy()
     activity["activity_month"] = activity["transaction_date"].dt.to_period("M")
     activity["cohort_month"] = activity.groupby("customer_id")["activity_month"].transform("min")
-    activity["period"] = (activity["activity_month"] - activity["cohort_month"]).apply(lambda value: value.n)
-    counts = activity.groupby(["cohort_month", "period"])["customer_id"].nunique().unstack(fill_value=0)
+    activity["period"] = (activity["activity_month"] - activity["cohort_month"]).apply(
+        lambda value: value.n
+    )
+    counts = (
+        activity.groupby(["cohort_month", "period"])["customer_id"].nunique().unstack(fill_value=0)
+    )
     cohort_size = counts[0]
     retention = counts.divide(cohort_size, axis=0).mul(100)
     retention.index = retention.index.astype(str)
@@ -67,8 +74,20 @@ def rolling_churn(data: pd.DataFrame, window_days: int = 30) -> pd.DataFrame:
         day = pd.Timestamp(day)
         previous_start = day - (window * 2)
         current_start = day - window
-        previous = set(data.loc[(data.transaction_date > previous_start) & (data.transaction_date <= current_start), "customer_id"])
-        current = set(data.loc[(data.transaction_date > current_start) & (data.transaction_date <= day), "customer_id"])
+        previous = set(
+            data.loc[
+                (data.transaction_date > previous_start) & (data.transaction_date <= current_start),
+                "customer_id",
+            ]
+        )
+        current = set(
+            data.loc[
+                (data.transaction_date > current_start) & (data.transaction_date <= day),
+                "customer_id",
+            ]
+        )
         churned = previous - current
-        rows.append({"date": day, "churn_rate": len(churned) / len(previous) * 100 if previous else 0.0})
+        rows.append(
+            {"date": day, "churn_rate": len(churned) / len(previous) * 100 if previous else 0.0}
+        )
     return pd.DataFrame(rows, columns=["date", "churn_rate"])

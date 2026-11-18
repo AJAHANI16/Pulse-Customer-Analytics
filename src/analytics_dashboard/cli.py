@@ -11,7 +11,11 @@ def main() -> None:
     parser.add_argument("--output-dir", default="data/processed", help="Output directory")
     args = parser.parse_args()
     _, report = run_pipeline(args.inputs, args.output_dir)
-    print(f"Processed {report.output_rows}/{report.input_rows} rows ({report.success_rate:.2f}% success).")
+    print(
+        f"Accepted {report.output_rows} of {report.input_rows} rows. "
+        f"Rejected {report.rejected_rows}: "
+        f"{report.invalid_rows} invalid, {report.duplicate_rows} duplicate."
+    )
 
 
 if __name__ == "__main__":
