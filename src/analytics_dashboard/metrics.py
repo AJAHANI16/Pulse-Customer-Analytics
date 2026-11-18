@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from datetime import timedelta
+from math import ceil
 
 import pandas as pd
 
@@ -27,9 +28,15 @@ def customer_segments(data: pd.DataFrame, as_of: pd.Timestamp | None = None) -> 
         monetary=("revenue", "sum"),
     )
     rfm["recency_days"] = (snapshot - rfm["last_purchase"]).dt.days
-    rfm["r_score"] = pd.qcut(rfm["recency_days"].rank(method="first"), 4, labels=[4, 3, 2, 1]).astype(int)
-    rfm["f_score"] = pd.qcut(rfm["frequency"].rank(method="first"), 4, labels=[1, 2, 3, 4]).astype(int)
-    rfm["m_score"] = pd.qcut(rfm["monetary"].rank(method="first"), 4, labels=[1, 2, 3, 4]).astype(int)
+    if len(rfm) < 4:
+        for column in ("r_score", "f_score", "m_score"):
+            rfm[column] = pd.Series(pd.NA, index=rfm.index, dtype="Int64")
+        rfm["segment"] = "Insufficient data"
+        return rfm.reset_index()
+    for source, target in (("recency_days", "r_score"), ("frequency", "f_score"),
+                           ("monetary", "m_score")):
+        scores = rfm[source].rank(method="average", pct=True).mul(4).apply(ceil).clip(1, 4)
+        rfm[target] = 5 - scores if source == "recency_days" else scores
     score = rfm[["r_score", "f_score", "m_score"]].sum(axis=1)
     rfm["segment"] = pd.cut(
         score, bins=[0, 5, 8, 10, 12], labels=["At Risk", "Needs Attention", "Loyal", "Champions"]
@@ -64,4 +71,4 @@ def rolling_churn(data: pd.DataFrame, window_days: int = 30) -> pd.DataFrame:
         current = set(data.loc[(data.transaction_date > current_start) & (data.transaction_date <= day), "customer_id"])
         churned = previous - current
         rows.append({"date": day, "churn_rate": len(churned) / len(previous) * 100 if previous else 0.0})
-    return pd.DataFrame(rows)
+    return pd.DataFrame(rows, columns=["date", "churn_rate"])

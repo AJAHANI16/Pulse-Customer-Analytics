@@ -2,6 +2,7 @@
 
 from datetime import timedelta
 from pathlib import Path
+from tempfile import TemporaryDirectory
 
 import pandas as pd
 import plotly.express as px
@@ -23,7 +24,7 @@ h1, h2, h3 {color: #17233d;}
 </style>""", unsafe_allow_html=True)
 
 st.title("Pulse Customer Analytics")
-st.caption("Revenue, retention, churn, and customer intelligence in one view")
+st.caption("Revenue and purchasing patterns from transaction exports")
 
 @st.cache_data
 def load_default() -> tuple[pd.DataFrame, dict]:
@@ -32,14 +33,22 @@ def load_default() -> tuple[pd.DataFrame, dict]:
 
 uploaded = st.sidebar.file_uploader("Upload CSV or JSON", type=["csv", "json"])
 if uploaded:
-    suffix = Path(uploaded.name).suffix
-    temporary = Path("data/processed") / f"upload{suffix}"
-    temporary.parent.mkdir(parents=True, exist_ok=True)
-    temporary.write_bytes(uploaded.getvalue())
-    data, audit = run_pipeline([temporary], "data/processed")
-    audit = audit.to_dict()
+    try:
+        with TemporaryDirectory(prefix="pulse-upload-") as temporary_dir:
+            temporary = Path(temporary_dir) / Path(uploaded.name).name
+            temporary.write_bytes(uploaded.getvalue())
+            data, audit = run_pipeline([temporary], temporary_dir)
+            audit = audit.to_dict()
+    except (ValueError, OSError) as error:
+        st.error(f"Could not load this file: {error}")
+        st.stop()
 else:
     data, audit = load_default()
+
+if data.empty:
+    st.warning("The input contains no valid transactions. Check the audit below.")
+    st.json(audit)
+    st.stop()
 
 st.sidebar.header("Filters")
 min_date, max_date = data.transaction_date.min().date(), data.transaction_date.max().date()
@@ -87,10 +96,15 @@ churn = rolling_churn(data)
 tab1, tab2, tab3 = st.tabs(["Retention", "Churn", "Segments"])
 with tab1:
     retention = cohort_retention(data)
-    st.plotly_chart(px.imshow(retention, text_auto=".0f", aspect="auto", color_continuous_scale="Purples", labels={"color": "Retention %", "x": "Months since signup", "y": "Cohort"}), width="stretch")
+    st.plotly_chart(px.imshow(retention, text_auto=".0f", aspect="auto", color_continuous_scale="Purples", labels={"color": "Retention %", "x": "Months since first observed purchase", "y": "Cohort"}), width="stretch")
 with tab2:
-    st.plotly_chart(px.line(churn, x="date", y="churn_rate", labels={"churn_rate": "Rolling churn (%)"}, color_discrete_sequence=["#ef6c78"]), width="stretch")
+    if churn.empty:
+        st.info("At least 30 days of transaction history are needed for this chart.")
+    else:
+        st.plotly_chart(px.line(churn, x="date", y="churn_rate", labels={"churn_rate": "Rolling churn (%)"}, color_discrete_sequence=["#ef6c78"]), width="stretch")
 with tab3:
+    if len(segments) < 4:
+        st.info("RFM segmentation needs at least four customers in the selected data.")
     summary = segments.groupby("segment", observed=True, as_index=False).agg(customers=("customer_id", "nunique"), revenue=("monetary", "sum"))
     st.plotly_chart(px.bar(summary, x="segment", y="customers", color="segment", text_auto=True, color_discrete_sequence=px.colors.qualitative.Set2), width="stretch")
     st.dataframe(segments[["customer_id", "segment", "recency_days", "frequency", "monetary"]].sort_values("monetary", ascending=False), width="stretch", hide_index=True)

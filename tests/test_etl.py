@@ -50,3 +50,16 @@ def test_pipeline_writes_outputs(tmp_path):
     saved_report = json.loads((tmp_path / "out/etl_report.json").read_text())
     assert (tmp_path / "out/customer_transactions.csv").exists()
     assert saved_report == report.to_dict()
+
+
+def test_nonfinite_revenue_is_rejected_and_missing_labels_are_normalized():
+    raw = valid_rows().iloc[:1].copy()
+    raw["country"] = None
+    raw["acquisition_channel"] = ""
+    clean, _ = transform(raw)
+    assert clean.iloc[0]["country"] == "UNKNOWN"
+    assert clean.iloc[0]["acquisition_channel"] == "Unknown"
+    raw["revenue"] = float("inf")
+    clean, report = transform(raw)
+    assert clean.empty
+    assert report.invalid_rows == 1

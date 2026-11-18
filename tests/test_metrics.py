@@ -42,3 +42,24 @@ def test_segments_include_every_customer(transactions):
 def test_rolling_churn_is_bounded(transactions):
     result = rolling_churn(transactions)
     assert result.churn_rate.between(0, 100).all()
+
+
+def test_short_history_preserves_churn_columns(transactions):
+    result = rolling_churn(transactions.iloc[:1])
+    assert result.empty
+    assert list(result.columns) == ["date", "churn_rate"]
+
+
+def test_single_customer_is_not_given_a_quartile_segment(transactions):
+    result = customer_segments(transactions[transactions.customer_id == "A"])
+    assert result.segment.tolist() == ["Insufficient data"]
+    assert result.r_score.isna().all()
+
+
+def test_tied_customers_share_rfm_scores(transactions):
+    data = transactions.iloc[:5].copy()
+    data["customer_id"] = list("ABCDE")
+    data["revenue"] = 10
+    data["transaction_date"] = pd.Timestamp("2024-01-01")
+    result = customer_segments(data)
+    assert result[["r_score", "f_score", "m_score"]].drop_duplicates().shape[0] == 1

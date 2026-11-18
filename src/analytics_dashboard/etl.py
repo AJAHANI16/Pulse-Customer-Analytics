@@ -69,8 +69,10 @@ def transform(raw: pd.DataFrame) -> tuple[pd.DataFrame, ETLReport]:
     input_rows = len(data)
     for column in ("customer_id", "transaction_id", "country", "acquisition_channel"):
         data[column] = data[column].astype("string").str.strip()
-    data["country"] = data["country"].str.upper()
-    data["acquisition_channel"] = data["acquisition_channel"].str.title()
+    data["country"] = data["country"].str.upper().replace("", pd.NA).fillna("UNKNOWN")
+    data["acquisition_channel"] = (
+        data["acquisition_channel"].str.title().replace("", pd.NA).fillna("Unknown")
+    )
     data["transaction_date"] = pd.to_datetime(data["transaction_date"], errors="coerce", utc=True)
     data["revenue"] = pd.to_numeric(data["revenue"], errors="coerce")
 
@@ -79,6 +81,7 @@ def transform(raw: pd.DataFrame) -> tuple[pd.DataFrame, ETLReport]:
         | data["transaction_id"].isna()
         | data["transaction_date"].isna()
         | data["revenue"].isna()
+        | data["revenue"].isin([float("inf"), float("-inf")])
         | (data["revenue"] < 0)
         | (data["customer_id"] == "")
         | (data["transaction_id"] == "")
